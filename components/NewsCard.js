@@ -1,0 +1,83 @@
+import {
+  View,
+  Text,
+  Dimensions,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import React from "react";
+import colors from "../constants/colors";
+
+const NewsCard = ({ item }) => {
+  const windowWidth = Dimensions.get("window").width;
+  let windowHeight = Dimensions.get("window").height;
+  windowHeight = 0.7 * windowHeight;
+  return (
+    <View
+      style={{
+        height: windowHeight,
+        alignItems: "center",
+        backgroundColor: colors.dark,
+        borderWidth: 0,
+        borderColor: "white",
+        marginBottom: 20,
+        borderRadius: 20,
+      }}
+    >
+      <Image
+        source={{ uri: item.img }}
+        style={{
+          width: 0.9 * windowWidth,
+          height: windowHeight / 2.5,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+        }}
+      />
+        <Text
+        style={{
+          fontSize: 20,
+          fontStyle:"italic",
+          fontWeight: "600",
+          margin: 10,
+          color: colors.light2,
+        }}
+      >
+        {item.source}
+      </Text>
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: "500",
+          margin: 10,
+          color: colors.light,
+        }}
+      >
+        {item.title}
+      </Text>
+      <TouchableOpacity
+        onPress={() => Linking.openURL(item.url)}
+        style={{ position: "absolute", bottom: 0 }}
+      >
+        <Text
+          style={{
+            fontSize: 15,
+            fontWeight: "500",
+            backgroundColor: "#72A0C1",
+            color: colors.light,
+            padding:10,
+            borderBottomLeftRadius:20,
+            borderBottomRightRadius:20,
+            width:0.9*windowWidth,
+            textAlign:"center",
+
+          }}
+        >
+          Read More
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default NewsCard;
