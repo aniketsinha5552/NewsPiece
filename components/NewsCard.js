@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import colors from "../constants/colors";
+import colors, { colors2 } from "../constants/colors";
 
 const NewsCard = ({ item }) => {
   const windowWidth = Dimensions.get("window").width;
@@ -23,15 +23,18 @@ const NewsCard = ({ item }) => {
         borderColor: "white",
         marginBottom: 20,
         borderRadius: 20,
+        overflow: "hidden",
+        width: windowWidth,
       }}
     >
       <Image
         source={{ uri: item.img }}
         style={{
-          width: 0.9 * windowWidth,
+          width: windowWidth,
           height: windowHeight / 2.5,
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
+          overflow: "hidden",
         }}
       />
         <Text
@@ -51,6 +54,8 @@ const NewsCard = ({ item }) => {
           fontWeight: "500",
           margin: 10,
           color: colors.light,
+          overflow :"scroll",
+          maxHeight:windowHeight/3,
         }}
       >
         {item.title}
@@ -68,7 +73,7 @@ const NewsCard = ({ item }) => {
             padding:10,
             borderBottomLeftRadius:20,
             borderBottomRightRadius:20,
-            width:0.9*windowWidth,
+            width:windowWidth,
             textAlign:"center",
 
           }}

@@ -54,6 +54,7 @@ export default function Categories() {
             </View>
           </TouchableOpacity>
         )}
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item}
         horizontal={true}
         contentContainerStyle={{ padding: 10 }}

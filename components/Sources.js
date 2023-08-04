@@ -4,6 +4,7 @@ import {
   FlatList,
   TouchableOpacity,
   SafeAreaView,
+  Image,
 } from "react-native";
 import React from "react";
 import { useRouter } from "expo-router";
@@ -12,30 +13,22 @@ import colors,{colors3,colors2} from "../constants/colors";
 export default function Sources() {
   const router = useRouter();
   const SourcesList = [
-    "The Times of India",
-    "The Hindu",
-    "The Indian Express",
-    "Hindustan Times",
-    "CNN",
-    "BBC",
-    "Al Jazeera",
+     {
+      name:"The Times of India",
+      img:"https://play-lh.googleusercontent.com/AS0Z1xkuhveb3IXzYASn52nhlFDIwcEmu1XmewVDZ39R8fZrQ13wldCy2nbjx9Aa1WCS"
+     },
+     {
+      name:"The Hindu",
+      img:"https://media.licdn.com/dms/image/C4E0BAQHpFmRv_tytvg/company-logo_200_200/0/1543304177527?e=2147483647&v=beta&t=nzXAa1723j1rifuRNuKWp9qwGsLrnf7AVoqExDY1DS4"
+     },{
+      name:"The BBC",
+      img:"https://yt3.googleusercontent.com/ytc/AOPolaQDYES9cRRhQs2T5-9Y03G2FEt_eVYTq3v8pK38dz8=s900-c-k-c0x00ffffff-no-rj"
+     },{
+      name:"Al Jazeera",
+      img:"https://static.timesofisrael.com/www/uploads/2013/01/jazeera.jpg"
+     }
   ];
-  const giveMeEmoji = (cat) => {
-    switch (cat) {
-      case "Business":
-        return "💼";
-      case "Entertainment":
-        return "🎭";
-      case "General":
-        return "📰";
-      case "Health":
-        return "🏥";
-      case "Science":
-        return "🔬";
-      case "Sports":
-        return "🏀";
-    }
-  };
+
   return (
     <SafeAreaView>
       <Text style={headingStyle}>
@@ -50,10 +43,9 @@ export default function Sources() {
         }}
       >
         {SourcesList.map((item,idx) => (
-          <TouchableOpacity onPress={() => router.push(`/news/${item}`)} key={idx}>
+          <TouchableOpacity onPress={() => router.push(`/news/${item.name}`)} key={idx}>
             <View style={cardStyle}  >
-              {/* <Text style={{fontSize:50}}>{giveMeEmoji(item)}</Text> */}
-              <Text style={{ fontSize: 20 }}>{item}</Text>
+              <Image source={{uri:item.img}} style={{width:"100%",height:"100%"}}/>
             </View>
           </TouchableOpacity>
         ))}
@@ -84,7 +76,8 @@ const cardStyle={
   height: 160,
   margin: 10,
   width: 160,
-  borderRadius: 5,
+  borderRadius: 15,
   alignItems: "center",
   justifyContent: "center",
+  overflow: "hidden",
 }

@@ -4,6 +4,7 @@ import {
   ScrollView,
   SafeAreaView,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import React from "react";
 import { useState } from "react";
@@ -16,7 +17,7 @@ export default function Home() {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
   return (
-    <SafeAreaView style={{backgroundColor:colors.light3}}>
+    <SafeAreaView style={{backgroundColor:colors.light3,height:Dimensions.get("window").height}}>
       <Stack.Screen
         options={{
           headerTitle: "NewsPiece 🗞️",
@@ -49,7 +50,7 @@ export default function Home() {
           <Sources />
         </View>
         <View style={{ justifyContent:"center",alignItems:"center" }}>
-        <Text style={{ fontSize: 20, fontWeight: 600, color:colors2.light }}>
+        <Text style={{ fontSize: 20, fontWeight: 600, color:colors2.light, }}>
           &#169; NewsPiece
         </Text>
       </View>

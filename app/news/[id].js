@@ -6,35 +6,34 @@ import {
   ScrollView,
   Image,
   Dimensions,
+  FlatList,
 } from "react-native";
 import { Stack, useSearchParams } from "expo-router";
-import React from "react";
+import React, { useEffect } from "react";
 import NewsCard from "../../components/NewsCard";
 import { giveMeEmoji } from "../../components/Categories";
 import Carousel from "react-native-snap-carousel";
 import colors, { colors2,colors3 } from "../../constants/colors";
+import { useState } from "react";
+import axios from "axios";
 
-const dummyNewsData = [
-  {
-    img: "https://static.toiimg.com/thumb/msid-102308586,imgsize-86498,width-400,resizemode-4/102308586.jpg",
-    title: "SC summons Manipur DGP, slams 'tardy probe' in violence cases",
-    url: "https://timesofindia.indiatimes.com/india/complete-break-down-of-constitutional-machinery-sc-lashes-out-at-manipur-government-over-ethnic-violence/articleshow/102308560.cms",
-    type: "General",
-    source: "The Times of India",
-  },
-  {
-    img: "https://static.toiimg.com/thumb/msid-102306884,imgsize-29400,width-400,resizemode-4/102306884.jpg",
-    title: "Lok Sabha to take up discussion on no-confidence motion from",
-    url: "https://timesofindia.indiatimes.com/india/lok-sabha-to-take-up-discussion-on-no-confidence-motion-from-august-8-to-10/articleshow/102303896.cms",
-    type: "General",
-    source: "The Hindu",
-  },
-];
 
 const NewPage = () => {
   const params = useSearchParams();
   const windowWidth = Dimensions.get("window").width;
   const windowHeight = Dimensions.get("window").height;
+  const [news,setNews] = useState([])
+  const getNewsData = async () => {
+    try{
+      let res = await axios.get('http://192.168.29.46:5000/news')
+      setNews(res.data)
+    }catch(err){
+      console.log(err)
+    }
+  }
+  useEffect(() => {
+    getNewsData()
+  })
   return (
     <SafeAreaView style={{backgroundColor:colors.light3,height:windowHeight}}>
       <Stack.Screen
@@ -54,14 +53,22 @@ const NewPage = () => {
           marginBottom: 20,
         }}
       >
-        <Carousel
-          data={dummyNewsData}
-          renderItem={({ item }) => <NewsCard item={item} />}
-          sliderWidth={windowWidth}
-          itemWidth={0.9 * windowWidth}
-          layout="stack"
-          layoutCardOffset={18}
+        {news.length ?(
+        <FlatList 
+        data={news}
+        key={(item)=>item.title}
+        renderItem={({ item }) => <NewsCard item={item} />}
+        keyExtractor={(item) => item._id}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        snapToInterval={windowWidth}
+        snapToAlignment={"center"}
+        decelerationRate={"fast"}
         />
+        ):(
+          <Text style={{fontSize:20,fontWeight:500,color:colors.light}}>Loading...</Text>
+        )}
+
         <Text style={{ fontSize: 15, fontWeight: 400, color: colors.light,fontStyle:"italic"}}>
           Swipe to see more
         </Text>
