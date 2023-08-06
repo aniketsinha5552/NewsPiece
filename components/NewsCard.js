@@ -13,7 +13,7 @@ import colors, { colors2,colors3} from "../constants/colors";
 const NewsCard = ({ item }) => {
   const windowWidth = Dimensions.get("window").width;
   let windowHeight = Dimensions.get("window").height;
-  windowHeight = 0.7 * windowHeight;
+  windowHeight = 0.8 * windowHeight;
   return (
     <View
       style={{
@@ -25,7 +25,11 @@ const NewsCard = ({ item }) => {
         marginBottom: 20,
         borderRadius: 20,
         overflow: "hidden",
-        width: windowWidth,
+        width: windowWidth*0.95,
+        marginLeft: 10,
+        marginRight: 10,
+        borderWidth:4,
+        borderColor:colors2.dark,
       }}
     >
       <Image

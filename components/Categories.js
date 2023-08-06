@@ -23,6 +23,16 @@ export const giveMeEmoji = (cat) => {
       return "🔬";
     case "Sports":
       return "🏀";
+    case "toi":
+      return "Times of India";
+    case "thehindu":
+      return "The Hindu";
+    case "cnn":
+      return "CNN";
+    case "aljazeera":
+      return "Al Jazeera";
+    case "all":
+      return "All 📰";
     default:
       return "📰";
   }

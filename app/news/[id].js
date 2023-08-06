@@ -36,7 +36,7 @@ const NewPage = () => {
     getNewsData()
   },[])
   return (
-    <SafeAreaView style={{backgroundColor:colors.light3,height:windowHeight}}>
+    <SafeAreaView style={{backgroundColor:colors2.light3,height:windowHeight}}>
       <Stack.Screen
         options={{
           headerTitle: `Discover ${giveMeEmoji(params.id)}`,
@@ -49,13 +49,13 @@ const NewPage = () => {
         style={{
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 30,
+          marginTop: 20,
           justifyContent: "center",
-          height: windowHeight * 0.8,
-          marginBottom: 20,
+          // height: windowHeight * 0.9,
+          marginBottom: 10,
         }}
       >
-        <FlatList 
+        {/* <FlatList 
         data={news}
         key={(item)=>item.title}
         renderItem={({ item }) => <NewsCard item={item} />}
@@ -65,7 +65,15 @@ const NewPage = () => {
         snapToInterval={windowWidth}
         snapToAlignment={"center"}
         decelerationRate={"fast"}
-        />
+        /> */}
+        <Carousel
+          data={news}
+          renderItem={({ item }) => <NewsCard item={item} />}
+          sliderWidth={windowWidth}
+          itemWidth={windowWidth}
+          layout={"tinder"}
+          loop={true}
+          />
 
         <Text style={{ fontSize: 15, fontWeight: 400, color: colors.light,fontStyle:"italic"}}>
           Swipe to see more

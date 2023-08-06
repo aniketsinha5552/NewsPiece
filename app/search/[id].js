@@ -46,37 +46,42 @@ import {
             headerTitleStyle: { color: colors2.light },
           }}
         />
-        <View
-          style={{
+    {news.length ?(
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 20,
+          justifyContent: "center",
+          // height: windowHeight * 0.9,
+          marginBottom: 10,
+        }}
+      >
+        <Carousel
+          data={news}
+          renderItem={({ item }) => <NewsCard item={item} />}
+          sliderWidth={windowWidth}
+          itemWidth={windowWidth}
+          layout={"tinder"}
+          loop={true}
+          />
+
+        <Text style={{ fontSize: 15, fontWeight: 400, color: colors.light,fontStyle:"italic"}}>
+          Swipe to see more
+        </Text>
+      </View>
+        ):(
+          <View style={{
             justifyContent: "center",
             alignItems: "center",
             marginTop: 30,
             justifyContent: "center",
             height: windowHeight * 0.8,
             marginBottom: 20,
-          }}
-        >
-          {news.length ?(
-          <FlatList 
-          data={news}
-          key={(item)=>item.title}
-          renderItem={({ item }) => <NewsCard item={item} />}
-          keyExtractor={(item) => item.title}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          snapToInterval={windowWidth}
-          snapToAlignment={"center"}
-          decelerationRate={"fast"}
-          />
-          ):(
+          }}>
             <Text style={{fontSize:20,fontWeight:500,color:colors.light}}>Loading...</Text>
-          )}
-  
-          <Text style={{ fontSize: 15, fontWeight: 400, color: colors.light,fontStyle:"italic"}}>
-            Swipe to see more
-          </Text>
-        </View>
-  
+          </View>
+        )}
         <View style={{ justifyContent:"center",alignItems:"center" }}>
           <Text style={{ fontSize: 20, fontWeight: 600, color: colors.light}}>
             &#169; NewsPiece
