@@ -14,17 +14,17 @@ export default function Sources() {
   const router = useRouter();
   const SourcesList = [
      {
-      name:"The Times of India",
+      name:"toi",
       img:"https://play-lh.googleusercontent.com/AS0Z1xkuhveb3IXzYASn52nhlFDIwcEmu1XmewVDZ39R8fZrQ13wldCy2nbjx9Aa1WCS"
      },
      {
-      name:"The Hindu",
+      name:"thehindu",
       img:"https://media.licdn.com/dms/image/C4E0BAQHpFmRv_tytvg/company-logo_200_200/0/1543304177527?e=2147483647&v=beta&t=nzXAa1723j1rifuRNuKWp9qwGsLrnf7AVoqExDY1DS4"
      },{
-      name:"The BBC",
-      img:"https://yt3.googleusercontent.com/ytc/AOPolaQDYES9cRRhQs2T5-9Y03G2FEt_eVYTq3v8pK38dz8=s900-c-k-c0x00ffffff-no-rj"
+      name:"cnn",
+      img:"https://upload.wikimedia.org/wikipedia/commons/f/fb/Cnn_logo_red_background.png?20150626194629"
      },{
-      name:"Al Jazeera",
+      name:"aljazeera",
       img:"https://static.timesofisrael.com/www/uploads/2013/01/jazeera.jpg"
      }
   ];
@@ -69,6 +69,7 @@ const headingStyle= {
   borderRadius: 5,
   textAlign: "center",
   color: colors3.light,
+  marginBottom: 10,
 }
 
 const cardStyle={

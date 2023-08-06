@@ -47,7 +47,8 @@ export default function Categories() {
       <FlatList
         data={categoryList}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => router.push(`/news/${item}`)}>
+          // <TouchableOpacity onPress={() => router.push(`/news/${item}`)}>
+          <TouchableOpacity onPress={() => router.push(`/news/all`)}>
             <View style={categoryStyle}>
               <Text style={{ fontSize: 50 }}>{giveMeEmoji(item)}</Text>
               <Text style={{ fontSize: 20 }}>{item}</Text>

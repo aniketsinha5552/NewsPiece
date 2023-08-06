@@ -5,9 +5,10 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  Linking
 } from "react-native";
 import React from "react";
-import colors, { colors2 } from "../constants/colors";
+import colors, { colors2,colors3} from "../constants/colors";
 
 const NewsCard = ({ item }) => {
   const windowWidth = Dimensions.get("window").width;
@@ -43,7 +44,7 @@ const NewsCard = ({ item }) => {
           fontStyle:"italic",
           fontWeight: "600",
           margin: 10,
-          color: colors.light2,
+          color: colors3.light3,
         }}
       >
         {item.source}
