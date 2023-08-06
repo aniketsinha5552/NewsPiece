@@ -10,7 +10,8 @@ A new app created using React Native
 - Search a topic
 
 
-https://github.com/aniketsinha5552/NewsPiece/assets/104712880/31664b48-f13c-4632-886b-ac1e84fb1948
+https://github.com/aniketsinha5552/NewsPiece/assets/104712880/4e72b32d-120a-47e8-ae16-81f53c5210da
+
 
 
 
