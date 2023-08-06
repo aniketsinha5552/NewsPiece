@@ -1,14 +1,16 @@
-# Expo Router Example
+## NewsPiece
+A new app created using React Native
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+## NodeJs Backend 👉👉 https://github.com/aniketsinha5552/News-Webscraper
 
-## 🚀 How to use
+## Features
+- Get all the latest news from around the world
+- View by news sources
+- View by category (upcoming)
+- Search a topic
 
-```sh
-npx create-expo-app -e with-router
-```
 
-## 📝 Notes
+https://github.com/aniketsinha5552/NewsPiece/assets/104712880/31664b48-f13c-4632-886b-ac1e84fb1948
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+
+
