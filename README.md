@@ -1,6 +1,8 @@
 ## NewsPiece
 A new app created using React Native
 
+## Tech: React Native
+
 ## NodeJs Backend 👉👉 https://github.com/aniketsinha5552/News-Webscraper
 
 ## Features
