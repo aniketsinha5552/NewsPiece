@@ -1,5 +1,5 @@
 ## NewsPiece
-A new app created using React Native
+*All the news. All in one place.*
 
 ## Tech: React Native
 
