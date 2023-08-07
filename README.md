@@ -1,5 +1,5 @@
 ## NewsPiece
-### https://expo.dev/@aniketsinha/NewsPiece
+## To run the app download the Expo Go app and scan the QR code from : https://expo.dev/@aniketsinha/NewsPiece
 *All the news. All in one place.*
 
 ## Tech: React Native
