@@ -5,6 +5,8 @@
       "bundler": "metro"
     },
     "name": "NewsPiece",
-    "slug": "NewsPiece"
+    "slug": "NewsPiece",
+    "description": "Get the latest news from around the world",
+    "icon": "./assets/logo.png"
   }
 }

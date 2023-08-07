@@ -15,7 +15,7 @@ import { giveMeEmoji } from "../../components/Categories";
 import Carousel from "react-native-snap-carousel";
 import colors, { colors2,colors3 } from "../../constants/colors";
 import { useState } from "react";
-import axios from "axios";
+import { newsRequest } from "../../requests";
 
 
 const NewPage = () => {
@@ -25,8 +25,7 @@ const NewPage = () => {
   const [news,setNews] = useState([])
   const getNewsData = async () => {
     try{
-      let url = `http://192.168.29.46:5000/news/${params.id}`
-      let res = await axios.get(url)
+      let res = await newsRequest.get(`/${params.id}?cache=true`)
       setNews(res.data)
     }catch(err){
       console.log(err)
@@ -72,7 +71,6 @@ const NewPage = () => {
           sliderWidth={windowWidth}
           itemWidth={windowWidth}
           layout={"tinder"}
-          loop={true}
           />
 
         <Text style={{ fontSize: 15, fontWeight: 400, color: colors.light,fontStyle:"italic"}}>

@@ -15,7 +15,7 @@ import {
   import Carousel from "react-native-snap-carousel";
   import colors, { colors2,colors3 } from "../../constants/colors";
   import { useState } from "react";
-  import axios from "axios";
+  import { newsRequest } from "../../requests";
   
   
   const SearchPage = () => {
@@ -25,8 +25,7 @@ import {
     const [news,setNews] = useState([])
     const getNewsData = async () => {
       try{
-        let url = `http://192.168.29.46:5000/news/search`
-        let res = await axios.post(url,{
+        let res = await newsRequest.post('/search',{
             search:params.id
         })
         setNews(res.data)
@@ -63,7 +62,6 @@ import {
           sliderWidth={windowWidth}
           itemWidth={windowWidth}
           layout={"tinder"}
-          loop={true}
           />
 
         <Text style={{ fontSize: 15, fontWeight: 400, color: colors.light,fontStyle:"italic"}}>

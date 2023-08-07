@@ -9,23 +9,28 @@ import {
 import React from "react";
 import { useRouter } from "expo-router";
 import colors,{colors3,colors2} from "../constants/colors";
+const thehinduLogo = require("../assets/news_sources/thehindu.jpeg");
+const cnnLogo = require("../assets/news_sources/cnn.png");
+const indianexpressLogo = require("../assets/news_sources/indianexpress.png");
+const aljazeeraLogo = require("../assets/news_sources/aljazeera.jpg");
 
 export default function Sources() {
   const router = useRouter();
   const SourcesList = [
      {
-      name:"toi",
-      img:"https://play-lh.googleusercontent.com/AS0Z1xkuhveb3IXzYASn52nhlFDIwcEmu1XmewVDZ39R8fZrQ13wldCy2nbjx9Aa1WCS"
-     },
-     {
       name:"thehindu",
-      img:"https://media.licdn.com/dms/image/C4E0BAQHpFmRv_tytvg/company-logo_200_200/0/1543304177527?e=2147483647&v=beta&t=nzXAa1723j1rifuRNuKWp9qwGsLrnf7AVoqExDY1DS4"
+      img: thehinduLogo
      },{
       name:"cnn",
-      img:"https://upload.wikimedia.org/wikipedia/commons/f/fb/Cnn_logo_red_background.png?20150626194629"
-     },{
+      img: cnnLogo
+     },
+     {
+      name:"indianexpress",
+      img: indianexpressLogo
+     },
+     {
       name:"aljazeera",
-      img:"https://static.timesofisrael.com/www/uploads/2013/01/jazeera.jpg"
+      img: aljazeeraLogo
      }
   ];
 
@@ -45,7 +50,7 @@ export default function Sources() {
         {SourcesList.map((item,idx) => (
           <TouchableOpacity onPress={() => router.push(`/news/${item.name}`)} key={idx}>
             <View style={cardStyle}  >
-              <Image source={{uri:item.img}} style={{width:"100%",height:"100%"}}/>
+              <Image source={item.img} style={{width:"100%",height:"100%"}}/>
             </View>
           </TouchableOpacity>
         ))}
@@ -73,7 +78,7 @@ const headingStyle= {
 }
 
 const cardStyle={
-  backgroundColor: colors2.light,
+  backgroundColor: "white",
   height: 160,
   margin: 10,
   width: 160,
