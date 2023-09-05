@@ -12,8 +12,7 @@
 - View by category (upcoming)
 - Search a topic
 
-
-
+![NewsPiece](https://github.com/aniketsinha5552/NewsPiece/assets/104712880/de13807b-e885-419f-b173-e9c7bf7d4c52)
 
 
 https://github.com/aniketsinha5552/NewsPiece/assets/104712880/75f88fac-41be-4557-b31b-8dcf1d137941
