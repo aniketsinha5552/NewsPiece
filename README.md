@@ -10,7 +10,7 @@
 - Get all the latest news from around the world
 - View by news sources
 - View by category (upcoming)
-- Search a topic
+- Search news for a topic
 
 ![NewsPiece](https://github.com/aniketsinha5552/NewsPiece/assets/104712880/de13807b-e885-419f-b173-e9c7bf7d4c52)
 
