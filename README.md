@@ -1,12 +1,12 @@
 ## NewsPiece
-## To run the app download the Expo Go app and scan the QR code from : https://expo.dev/@aniketsinha/NewsPiece
 *All the news. All in one place.*
+### To run the app download the Expo Go app and scan the QR code from : https://expo.dev/@aniketsinha/NewsPiece
 
-## Tech: React Native
+### Tech: React Native
 
-## NodeJs Backend 👉👉 https://github.com/aniketsinha5552/News-Webscraper
+### NodeJs Backend 👉👉 https://github.com/aniketsinha5552/News-Webscraper
 
-## Features
+### Features
 - Get all the latest news from around the world
 - View by news sources
 - View by category (upcoming)
