@@ -1,10 +1,11 @@
-## NewsPiece
-*All the news. All in one place.*
+# NewsPiece
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+
+## All the news. All in one place.
 ### To run the app download the Expo Go app and scan the QR code from : https://expo.dev/@aniketsinha/NewsPiece
 
-### Tech: React Native
-
-### NodeJs Backend 👉👉 https://github.com/aniketsinha5552/News-Webscraper
+### [Web Scraper using Node](https://github.com/aniketsinha5552/News-Webscraper)
 
 ### Features
 - Get all the latest news from around the world
